@@ -16,6 +16,7 @@ void setup() {
   //Display algorithim will poulate smaller and larger dimensions
   population();
  textSetup();
+imagePopulation();
  
 }//
 //
