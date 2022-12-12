@@ -1,7 +1,7 @@
-//Global variables
+ //Global variables
 int appWidth=1,appHeight=1,smallerDimension,largerDimension;
-Boolean OS_on=false;
-color purple=#FF00FF, resetDefaultInk=#FFFFFF;
+Boolean OS_on=false,splashScreenStart = false;
+color purple=#FF00FF, resetDefaultInk=#FFFFFF,white=#FFFFFF;
 /* night mode comment 
 purple not for night mode full BLUE
 resetDefaultInk is WHITE not night mode frindly full BLUE
@@ -23,21 +23,25 @@ void setup() {
 //
 void draw() {
   ///Assingment OS level mouse click splash screen
-  if (OS_on==true) splashScreen();//os level mouse click
+  if (OS_on==true && splashScreenStart==false) splashScreen();//os level mouse click
+  if ( splashScreenStart==true ) homeScreen();
 }//
 //
 //end draw
 //
 void mousePressed() {
-  //os level mouse click
-  if (OS_on==false )OS_on=true;//end OS level mouse cdlick
-}//
-//
-//End mousePressed
+  //OS Level Mouse Click
+  if ( OS_on==false ) OS_on=true;//End OS Level Mouse Click
+}//End mousePressed
 //
 void keyPressed() {
-}//
-//
-//End keyPressed
+  //Splash Screen SPACE Bar
+  if ( OS_on==true && key==' ' ) {
+    splashScreenStart = true;
+    backgroundWhiteScreen();
+    backgroundImage();
+  }//End Splash Screen SPACE Bar
+  //
+}//End keyPressed
 //
 //End Main program

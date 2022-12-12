@@ -8,8 +8,10 @@ void splashScreen(){
 - start button
 -any other instructions
 -SPlash screen details
-*/background(255);// testing only not night mode friendly full blue
-spaceBarText();
-}//end splashscreen
+ */
+   //background(255); //Testing only, not night mode friendly, full BLUE
+   backgroundWhiteScreen();
+   spaceBarText();
+}//End splashScreen
 //
-//end sup-program
+//End Splash Screen Subprogram
