@@ -1,23 +1,23 @@
- //Global variables
-int appWidth=1,appHeight=1,smallerDimension,largerDimension;
-Boolean OS_on=false,splashScreenStart = false, rectgrid=false;
-color purple=#FF00FF, resetDefaultInk=#FFFFFF,white=#FFFFFF;
+//Global variables
+int appWidth=1, appHeight=1, smallerDimension, largerDimension;
+Boolean OS_on=false, splashScreenStart = false, rectgrid=false;
+Boolean nightMode=false;
+color purple=#FF00FF, resetDefaultInk=#FFFFFF, white=#FFFFFF;
 /* night mode comment 
-purple not for night mode full BLUE
-resetDefaultInk is WHITE not night mode frindly full BLUE
-*/
+ purple not for night mode full BLUE
+ resetDefaultInk is WHITE not night mode frindly full BLUE
+ */
 //
 void setup() {
-  
-  size(1207,905);//Dont change if you do use varibles of 3 for quick corections
+
+  size(1207, 905);//Dont change if you do use varibles of 3 for quick corections
   appWidth = width;
   appHeight = height;
   display();
   //Display algorithim will poulate smaller and larger dimensions
   population();
- textSetup();
-imagePopulation();
- 
+  textSetup();
+  imagePopulation();
 }//
 //
 //end setup
@@ -26,9 +26,8 @@ void draw() {
   ///Assingment OS level mouse click splash screen
   if (OS_on==true && splashScreenStart==false) splashScreen();//os level mouse click
   if ( splashScreenStart==true ) homeScreen();
-  if(rectgrid==true)rectgrid();
-   if ( splashScreenStart==true ) println("Press Enter or V/v to start ");
-
+  if (rectgrid==true)rectgrid();
+  if ( splashScreenStart==true ) println("Press Enter or V/v to start ");
 }//
 //
 //end draw
@@ -43,12 +42,26 @@ void keyPressed() {
   if ( OS_on==true && key==' ' ) {
     splashScreenStart = true;
     backgroundWhiteScreen();     
-     backgroundImage();
+    backgroundImage();
   }//End Splash Screen SPACE Bar
   //
-  if( splashScreenStart == true && key== ENTER || key=='v' || key=='V'){
-  rectgrid=true;
+  if ( splashScreenStart == true && key== ENTER || key=='v' || key=='V') {
+    rectgrid=true;
   };
+  //
+  //key board short cuts
+  if (key==CODED && keyCode==ESC)exit();
+  if (key == 'Q' || key=='q')exit();
+  if (key=='N' || key=='n') {
+    if (nightMode==true) {
+      nightMode=false;
+      backgroundImage();
+    } else {
+      nightMode=true;
+      backgroundImage();
+    }
+  };
+  //
 }//End keyPressed
 //
 //End Main program

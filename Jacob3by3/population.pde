@@ -49,6 +49,12 @@ backgroundHeight = appHeight;
  gridY9=600 ;
  gridWidth9 = appWidth * 1/3 ;
  gridHeight9 =  appHeight * 1/3;
+ //
+ //buttons
+ quitX= centerX - quitWidth*1/2;
+ quitY= centerY - 4*quitHeight ;
+ quitWidth= appWidth *1/3;
+ quitHeight= appHeight *1/10;
 
 } //end population
 //
