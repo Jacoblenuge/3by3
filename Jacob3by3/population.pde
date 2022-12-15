@@ -55,6 +55,12 @@ backgroundHeight = appHeight;
  quitY= centerY - 4*quitHeight ;
  quitWidth= appWidth *1/3;
  quitHeight= appHeight *1/10;
+ //quit button images
+ //
+quitButtonImageRectX=quitX;
+quitButtonImageRectY=quitY;
+quitButtonImageRectWidth=quitWidth;
+quitButtonImageRectHeight=quitHeight;
 
 } //end population
 //

@@ -29,7 +29,7 @@ void quitButtonText() {
   fill(purple); //Ink, hexidecimal copied from Color Selector
   textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  int size = 43; //Change the number until it fits
+  int size = 33; //Change the number until it fits
   textFont(harrington, size); 
   String quitButton = "Quit";
   text( quitButton,  quitX, quitY, quitWidth, quitHeight );
