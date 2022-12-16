@@ -1,6 +1,6 @@
 int backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float quitX, quitY, quitWidth, quitHeight;
- float quitButtonImageRectX,quitButtonImageRectY,quitButtonImageRectWidth,quitButtonImageRectHeight;
+float quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight;
 int tintDayMode=255, tintDayModeOpacity=50;
 int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85; //BLUE should be Zero or as close to it
 //
@@ -15,33 +15,10 @@ int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85; //BLUE shoul
  */
 //
 void homeScreen() {
-  println("Arrived at Home Screen"); //Testing for Splash Screen Start Button
+  //println("Arrived at Home Screen"); //Testing for Splash Screen Start Button
   //
   //rect( quitX, quitY, quitWidth, quitHeight );
-  if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight ) { //QuitButton Hoverover
-    fill(white);
-    noStroke();
-    float centerX=appWidth*1/2;
-    float quitWidth_whiteScreen = centerX - appWidth * 1/15;
-    rect( quitX, quitY, quitWidth_whiteScreen, quitHeight );
-    strokeWeight(1); //Reset: 1 pixel
-    noFill();
-    quitButtonImage(); //Cookie, aspect ratio
-    /*
-    fill(white);
-     rect( quitX, quitY, quitWidth, quitHeight ); //testing only
-     noFill();
-     */
-  } else {
-    fill(white);
-    noStroke();
-    float centerX=appWidth*1/2;
-    float quitWidth_whiteScreen = centerX - appWidth * 1/15;
-    rect( quitX, quitY, quitWidth_whiteScreen, quitHeight );
-    strokeWeight(1); //Reset: 1 pixel
-    noFill();
-    quitButtonText();
-  }
+  quitButtonHoverOver();
 }//End homeScreen
 //
 void backgroundWhiteScreen() {
@@ -54,8 +31,7 @@ void backgroundWhiteScreen() {
 //
 void backgroundImage() {
   backgroundWhiteScreen();
-  if ( nightMode==false ) tint( tintDayMode, tintDayModeOpacity ); //Day Mode, see ternary operator
-  if ( nightMode==true ) tint( tintRed, tintGreen, tintBlue, tintNightModeOpacity ); //Night Mode, see ternary operator
+  imageNightMode();
   image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
 }//End backgroundImage
 //

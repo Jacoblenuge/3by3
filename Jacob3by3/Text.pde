@@ -23,10 +23,10 @@ void spaceBarText() {
   text( spaceBar, startX, startY, startWidth, startHeight );
   noFill(); //Reset
 }//End spaceBarText
-//
-void quitButtonText() {
+/*void quitButtonText() {
   //rect( quitX, quitY, quitWidth, quitHeight );
-  fill(purple); //Ink, hexidecimal copied from Color Selector
+  color ink = (nightMode==true) ?#7D7D00  : purple;
+  fill(ink); //Ink, hexidecimal copied from Color Selector
   textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
   int size = 33; //Change the number until it fits
@@ -34,6 +34,7 @@ void quitButtonText() {
   String quitButton = "Quit";
   text( quitButton,  quitX, quitY, quitWidth, quitHeight );
   noFill(); //Reset
-}//End spaceBarText
+ }//End spaceBarText
+ */
 //
 //End Text Subprogram

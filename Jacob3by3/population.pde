@@ -50,18 +50,30 @@ backgroundHeight = appHeight;
  gridWidth9 = appWidth * 1/3 ;
  gridHeight9 =  appHeight * 1/3;
  //
+ //button
+ //
+ ButtonX=500; 
+ ButtonY= 50;
+ ButtonWidth=gridWidth2 * 1/2;
+ ButtonHeight= gridHeight2*1/6;
+ //
+ ButtonX2=500; 
+ ButtonY2= 150;
+ ButtonWidth2=gridWidth2 * 1/2;
+ ButtonHeight2= gridHeight2*1/6;
+ //unused
  //buttons
- quitX= centerX - quitWidth*1/2;
- quitY= centerY - 4*quitHeight ;
- quitWidth= appWidth *1/3;
+ /*quitX= centerX - quitWidth;
+ quitY= 20 ;
+ quitWidth= appWidth *1/2;
  quitHeight= appHeight *1/10;
  //quit button images
  //
 quitButtonImageRectX=quitX;
 quitButtonImageRectY=quitY;
-quitButtonImageRectWidth=quitWidth;
+quitButtonImageRectWidth=quitWidth*2;
 quitButtonImageRectHeight=quitHeight;
-
+*/
 } //end population
 //
 //end sup=program
