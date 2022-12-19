@@ -1,8 +1,8 @@
 //Global variables
 int appWidth=1, appHeight=1, smallerDimension, largerDimension;
-Boolean OS_on=false, splashScreenStart = false, rectgrid=false;
+Boolean OS_on=false, splashScreenStart = false, rectgrid=false, GameStart=false;
 Boolean nightMode=false;
-color purple=#FF00FF, resetDefaultInk=#FFFFFF, white=#FFFFFF;
+color purple=#FF00FF, resetDefaultInk=#FFFFFF, white=#FFFFFF,red=#F70A0A;
 /* night mode comment 
  purple not for night mode full BLUE
  resetDefaultInk is WHITE not night mode frindly full BLUE
@@ -18,6 +18,13 @@ void setup() {
   population();
   textSetup();
   imagePopulation();
+  if(GameStart==true)Game();
+  if(GameStart==true)rectgrid=true;
+  if(GameStart==true)splashScreenStart=false;
+   if(GameStart==true)OS_on=true;
+   //if(GameStart==true)backgroundWhiteScreen=false;
+   //if(GameStart==true)splashScreenStart=false;
+  if(GameStart==true)backgroundredScreen();
 }//
 //
 //end setup
@@ -37,6 +44,9 @@ void mousePressed() {
   if ( OS_on==false ) OS_on=true;//End OS Level Mouse Click
   //QuitButton
   if(splashScreenStart==true &&  mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight) exit();
+    if ( rectgrid== true && mouseX > ButtonX2 && mouseX < ButtonX2+ButtonWidth2 && mouseY > ButtonY2 && mouseY < ButtonY2+ButtonHeight2 ) exit();
+ if ( rectgrid== true && mouseX > ButtonX3 && mouseX < ButtonX3+ButtonWidth3 && mouseY > ButtonY3 && mouseY < ButtonY3+ButtonHeight3 );splashScreen();
+ if ( rectgrid== true && mouseX > ButtonX && mouseX < ButtonX+ButtonWidth && mouseY > ButtonY && mouseY < ButtonY+ButtonHeight ); GameStart=true;
 }//End mousePressed
 //
 void keyPressed() {
@@ -50,6 +60,9 @@ void keyPressed() {
   if ( splashScreenStart == true && key== ENTER || key=='v' || key=='V') {
     rectgrid=true;
   };
+
+
+   
   //
   //key board short cuts
   if (key==CODED && keyCode==ESC)exit();

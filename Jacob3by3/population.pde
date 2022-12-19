@@ -58,9 +58,14 @@ backgroundHeight = appHeight;
  ButtonHeight= gridHeight2*1/6;
  //
  ButtonX2=500; 
- ButtonY2= 150;
+ ButtonY2= 125;
  ButtonWidth2=gridWidth2 * 1/2;
  ButtonHeight2= gridHeight2*1/6;
+ //
+ ButtonX3=500;
+ ButtonY3=200  ;
+ ButtonWidth3=gridWidth2 * 1/2;;
+ ButtonHeight3=gridHeight2*1/6;;
  //unused
  //buttons
  /*quitX= centerX - quitWidth;

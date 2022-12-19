@@ -37,4 +37,37 @@ void spaceBarText() {
  }//End spaceBarText
  */
 //
+void StartButtontext() {
+  //rect( startX, startY, startWidth, startHeight );
+  fill(purple); //Ink, hexidecimal copied from Color Selector
+  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  int size = 30; //Change the number until it fits
+  textFont(harrington, size); 
+  String startText = "Start";
+  text( startText,ButtonX,ButtonY,ButtonWidth,ButtonHeight );
+  noFill(); //Reset
+}//end startText
+void quitButtontext() {
+  //rect( startX, startY, startWidth, startHeight );
+  fill(purple); //Ink, hexidecimal copied from Color Selector
+  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  int size = 30; //Change the number until it fits
+  textFont(harrington, size); 
+  String quitText = "Quit";
+  text( quitText,ButtonX2,ButtonY2,ButtonWidth2,ButtonHeight2 );
+  noFill(); //Reset
+}//end quitText
+void restartButtontext() {
+  //rect( startX, startY, startWidth, startHeight );
+  fill(purple); //Ink, hexidecimal copied from Color Selector
+  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  int size = 30; //Change the number until it fits
+  textFont(harrington, size); 
+  String restartText = "Restart";
+  text( restartText,ButtonX3,ButtonY3,ButtonWidth3,ButtonHeight3 );
+  noFill(); //Reset
+}//end restartText
 //End Text Subprogram
