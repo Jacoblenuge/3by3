@@ -1,3 +1,4 @@
+float startX,startY,startWidth,startHeight;
 void population(){
   float centerX=appWidth*1/2,centerY=appHeight*1/2;
   startWidth=appWidth*1/2;
@@ -68,23 +69,8 @@ backgroundHeight = appHeight;
  ButtonHeight3=gridHeight2*1/6;;
  //redscreen
  //
- backgroundX2=0;
- backgroundY2=0;
- backgroundWidth2=width;
- backgroundHeight2=height;
- //unused
- //buttons
- /*quitX= centerX - quitWidth;
- quitY= 20 ;
- quitWidth= appWidth *1/2;
- quitHeight= appHeight *1/10;
- //quit button images
- //
-quitButtonImageRectX=quitX;
-quitButtonImageRectY=quitY;
-quitButtonImageRectWidth=quitWidth*2;
-quitButtonImageRectHeight=quitHeight;
-*/
-} //end population
-//
-//end sup=program
+ ////backgroundX2=0;
+ //backgroundY2=0;
+// backgroundWidth2=width;
+// backgroundHeight2=height;}
+}

@@ -14,7 +14,7 @@ int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85; //BLUE shoul
  - Note: must have one image with aspect ratio
  */
 //
-void homeScreen() {
+/*void homeScreen() {
   //println("Arrived at Home Screen"); //Testing for Splash Screen Start Button
   //
   //rect( quitX, quitY, quitWidth, quitHeight );
@@ -36,3 +36,4 @@ void backgroundImage() {
 }//End backgroundImage
 //
 //End Home Screen Subprogram
+*/
