@@ -1,11 +1,11 @@
-PImage backGroundImage;
+PImage backgroundImage;
 int backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 int tintDayMode=255, tintDayModeOpacity=50;
-int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85; //BLUE should be Zero or as close to it
+int tintRed=184, tintGreen=184, tintBlue=45, tintNightModeOpacity=5; //BLUE should be Zero or as close to it
 //
 //
 void imagePopulation() {
-  backGroundImage = loadImage ("../Images/planets-galaxy-science-fiction-wallpaper-beauty-deep-space-planets-galaxy-science-fiction-wallpaper-beauty-deep-123015144.jpg");
+  backgroundImage = loadImage ("../Images/planets-galaxy-science-fiction-wallpaper-beauty-deep-space-planets-galaxy-science-fiction-wallpaper-beauty-deep-123015144.jpg");
 }//End imagePopulation
 //
 void imageNightMode() {
@@ -20,7 +20,7 @@ void imageNightMode() {
 }//End imageNightMode
 //
 void backgroundImage() {
-  
+   image( backgroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
   imageNightMode();
-  image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
+
 }//End backgroundImage

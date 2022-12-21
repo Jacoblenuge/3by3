@@ -6,8 +6,8 @@ void population(){
 startX=centerX-startWidth*1/2;
 startY=centerY- startHeight*1/2  ;
 //
-backgroundX = appWidth * 0;
-backgroundY = appHeight *0 ;
+backgroundX = 1 ;
+backgroundY = 1  ;
 backgroundWidth = appWidth;
 backgroundHeight = appHeight;
 // top row
