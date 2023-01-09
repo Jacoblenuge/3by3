@@ -1,15 +1,24 @@
-void display(){
-  if(appWidth>=appHeight){
-  largerDimension = appWidth;
-  smallerDimension = appHeight;
-  }else{
-   largerDimension = appHeight;
-  smallerDimension = appWidth;
+void display() {
+  if (appWidth>=appHeight) {
+    largerDimension = appWidth;
+    smallerDimension = appHeight;
+  } else {
+    largerDimension = appHeight;
+    smallerDimension = appWidth;
   }
-   println("\t\t\tWidth="+width, "\tHeight="+height);
-  println("Display Monitor:", "\twidth:"+displayWidth, "\theight:"+displayHeight);
+  //purpose: CANVAS fits in monitor and dimension size is known
+  //Output #1: console confirms CANVAS will fit in the monitor
+  //Output #2: console confirms display orientation (landscape-square or portrait)
+  //Output #3: console confirms dimension sizes (smaller and larger)
+  //Output #4: if error with any of above, program will exit or be broken
+  //           Hint: "bruh, turn yout phu."
+  println("CANVAS:", "Width:"+width, "Height="+height);
+  println("Display Monitor:", "Width:"+displayWidth, "Height:"+displayHeight);
   //
-  String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru, turn your phun, Display Orientation: Portarait ";
+  String ls="Landscape or Square", p="portrait", DO="Display Orientation:", instruct="Bru, turn your phun";
+  String orientation = ( appWidth >= appHeight ) ? ls : p ;
+  println(DO, orientation);
+  if (orientation == p ) println(instruct);
   //
   if ( appWidth < appHeight ) { //Declaring Landscape & square
     println(instruct);
@@ -21,20 +30,10 @@ void display(){
       println("STOP, is broken");
     } else {
       //Empty ELSE
-      if (appWidth> appHeight ){
-println( "Display Orientation: Landscape or square");
     }
   }
-}
-println("largerDimension:",largerDimension);
-println("smallerDimension:",smallerDimension);
-}
-//Purpose CANVAS fits moniter& dimesino size know
-//Output#1 consle confirms consle will fit in moniterYes
-//Output#2 Console confirms displaY ORIENTATION(landscape or portrait)
-//Output#3 console confirms dimension sizes (smaller larger)
-//Output#4 if error with any above programe will exit
+  println("Smaller Dimension:", smallerDimension);
+  println("Larger Dimension:", largerDimension);
+}//End display
 //
-//End display
-//
-//end sup-program
+//End display and Orientation Subprogram

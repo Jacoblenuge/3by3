@@ -1,73 +1,26 @@
-
-PFont harrington;
+PFont Harrington;
 //
 void textSetup() {
-  //Assignment #2: Minimum Expectation = one font
+  //minimum expectation = 1 font
   //
   //Fonts from OS (Operating System)
-  //String[] fontList = PFont.list(); //To list all fonts available on OS
+  // String[] fontList = PFont.list(); //To list all fonts available on OS
   //printArray(fontList); //For listing all possible fonts to choose from, then createFont
-  harrington = createFont("Harrington", 55); //Verify the font exists in Processing.Java
+  Harrington = createFont("Harrington", 55); //Verify the font exists in Processing.Java
   // Tools / Create Font / Find Font / Do not press "OK", known bug
   //
 }//End textSetup
 //
 void spaceBarText() {
-  //rect( startX, startY, startWidth, startHeight );
+  //rect(startX, startY, startWidth, startHeight);
   fill(purple); //Ink, hexidecimal copied from Color Selector
   textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  int size = 19; //Change the number until it fits
-  textFont(harrington, size); 
+  int size = 38;
+  textFont(Harrington, size); 
   String spaceBar = "Press the SPACE BAR to continue";
-  text( spaceBar, startX, startY, startWidth, startHeight );
-  noFill(); //Reset
+  text(spaceBar, startX, startY, startWidth, startHeight);
+  fill(resetDefaultInk);
 }//End spaceBarText
-/*void quitButtonText() {
-  //rect( quitX, quitY, quitWidth, quitHeight );
-  color ink = (nightMode==true) ?#7D7D00  : purple;
-  fill(ink); //Ink, hexidecimal copied from Color Selector
-  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  int size = 33; //Change the number until it fits
-  textFont(harrington, size); 
-  String quitButton = "Quit";
-  text( quitButton,  quitX, quitY, quitWidth, quitHeight );
-  noFill(); //Reset
- }//End spaceBarText
- */
 //
-void StartButtontext() {
-  //rect( startX, startY, startWidth, startHeight );
-  fill(purple); //Ink, hexidecimal copied from Color Selector
-  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  int size = 30; //Change the number until it fits
-  textFont(harrington, size); 
-  String startText = "Start";
-  text( startText,ButtonX,ButtonY,ButtonWidth,ButtonHeight );
-  noFill(); //Reset
-}//end startText
-void quitButtontext() {
-  //rect( startX, startY, startWidth, startHeight );
-  fill(purple); //Ink, hexidecimal copied from Color Selector
-  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  int size = 30; //Change the number until it fits
-  textFont(harrington, size); 
-  String quitText = "Quit";
-  text( quitText,ButtonX2,ButtonY2,ButtonWidth2,ButtonHeight2 );
-  noFill(); //Reset
-}//end quitText
-void restartButtontext() {
-  //rect( startX, startY, startWidth, startHeight );
-  fill(purple); //Ink, hexidecimal copied from Color Selector
-  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  int size = 30; //Change the number until it fits
-  textFont(harrington, size); 
-  String restartText = "Restart";
-  text( restartText,ButtonX3,ButtonY3,ButtonWidth3,ButtonHeight3 );
-  noFill(); //Reset
-}//end restartText
-//End Text Subprogram
+//End text subprogram

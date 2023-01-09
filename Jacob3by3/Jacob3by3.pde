@@ -1,93 +1,95 @@
-//Global variables
-int appWidth=1, appHeight=1, smallerDimension, largerDimension;
-Boolean OS_on=false, splashScreenStart = false, rectgrid=false, GameStart=false, Backgroundredscreenstart=false,Backgroundstart=false,redstart=false;
-Boolean nightMode=false;
-color purple=#FF00FF, resetDefaultInk=#FFFFFF, white=#FFFFFF,red=#F70A0A;
-/* night mode comment 
- purple not for night mode full BLUE
- resetDefaultInk is WHITE not night mode frindly full BLUE
- */
+//Global Variables
+int appWidth, appHeight, smallerDimension, largerDimension;
+Boolean OS_on=false, splashScreenStart=false, nightMode=false, startNow=false, reset=false, goodForYou=false;
+color purple=#FF00FF, resetDefaultInk=#000000, white=#FFFFFF;
+float lineX1, lineY1, lineWidth1, lineHeight1;
+float lineX2, lineY2, lineWidth2, lineHeight2;
+float lineX3, lineY3, lineWidth3, lineHeight3;
+float lineX4, lineY4, lineWidth4, lineHeight4;
+float startX2, startY2, startWidth2, startHeight2;
+float restartX, restartY, restartWidth, restartHeight;
+float quitX, quitY, quitWidth, quitHeight;
+color resetButtonColor, grey = #898989;
+color startButtonColor;
+color quitButtonColor;
 //
 void setup() {
-
-  size(1207, 905);//Dont change if you do use varibles of 3 for quick corections
+  size(1200, 900);
+  //
   appWidth = width;
   appHeight = height;
+  //Assignment: display algorithm from hello world
   display();
-  //Display algorithim will poulate smaller and larger dimensions
+  //display algorithm will populate smaller and larger dimensions
   population();
   textSetup();
   imagePopulation();
-  //if(GameStart==true)Game();
- // if(GameStart==true)rectgrid=true;
-  //if(GameStart==true)splashScreenStart=false;
-   //if(GameStart==true)OS_on=true;
-   //if(GameStart==true)backgroundWhiteScreen=false;
-   //if(GameStart==true)splashScreenStart=false;
-  //if(Backgroundredscreenstart==true)backgroundredScreen();
- //if (Backgroundstart==true) backgroundredScreen();
- // if (redstart==true){Backgroundstart=true;}else{Backgroundstart=false;}
- // if (rectgrid=true){splashScreenStart=false;}
- //if (GameStart=true)splashScreenStart =false;
- if (GameStart=true) {
-   background(255);
- }
-  if (GameStart=true)OS_on =false;
-  if (GameStart=false)OS_on =true;
-   if (GameStart=false)splashScreenStart =true;
-
-}//
-//
-//end setup
+}//End setup
 //
 void draw() {
-  ///Assingment OS level mouse click splash screen
-//if (OS_on==true && splashScreenStart==false) splashScreen();//os level mouse click
-  //if ( splashScreenStart==true ) homeScreen();
-  if (rectgrid==true)rectgrid();
- // if ( splashScreenStart==true ) println("Press Enter or V/v to start ");
-}//
-//
-//end draw
-//
-void mousePressed() {
-  //OS Level Mouse Click
-  if ( OS_on==false ) OS_on=true;//End OS Level Mouse Click
-  //QuitButton
-  //if(splashScreenStart==true &&  mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight) exit();
-    if ( rectgrid== true && mouseX > ButtonX2 && mouseX < ButtonX2+ButtonWidth2 && mouseY > ButtonY2 && mouseY < ButtonY2+ButtonHeight2 ) exit();
- if ( rectgrid== true && mouseX > ButtonX3 && mouseX < ButtonX3+ButtonWidth3 && mouseY > ButtonY3 && mouseY < ButtonY3+ButtonHeight3 );  rectgrid=false;     
- if ( rectgrid== true && mouseX > ButtonX && mouseX < ButtonX+ButtonWidth && mouseY > ButtonY && mouseY < ButtonY+ButtonHeight ) GameStart=true;
-}//End mousePressed
+  //assignment #2: OS level mouse click and splash screen
+  if ( OS_on == true && splashScreenStart == false) {
+    splashScreen(); //OS level mouse click
+  }
+  if ( splashScreenStart==true ) {
+    homeScreen();
+    gridDraw();
+  }
+  if (startNow==true) {
+    gridDraw2();
+  }
+  if ( reset==true ) {
+    reset();
+    reset=false;
+    pic2C2=false;
+    pic3C3=false;
+    pic4C4=false;
+    pic5C5=false;
+    pic6C6=false;
+    pic7C7=false;
+  }
+
+}//End draw
 //
 void keyPressed() {
-  //Splash Screen SPACE Bar
   if ( OS_on==true && key==' ' ) {
     splashScreenStart = true;
-   // backgroundWhiteScreen();     
-    //backgroundImage();
-  }//End Splash Screen SPACE Bar
+    backgroundWhiteScreen();
+    backgroundImage();
+  }//End splash Screen Space Bar
   //
-  if ( splashScreenStart == true && key== ENTER || key=='v' || key=='V') {
-    rectgrid=true;
-  };
-
-
-   
-  //
-  //key board short cuts
-  if (key==CODED && keyCode==ESC)exit();
-  if (key == 'Q' || key=='q')exit();
-  if (key=='N' || key=='n') {
-    if (nightMode==true) {
+  //keyboard short cuts
+  if (key=='N' || key=='n') { 
+    if (nightMode==true) { 
       nightMode=false;
-     // backgroundImage();
-    } else {
+      backgroundImage();
+    } else { 
       nightMode=true;
-      //backgroundImage();
+      backgroundImage();
     }
-  };
-  //
+  }
 }//End keyPressed
 //
-//End Main program
+void mousePressed() {
+  //OS level mouse click
+  if ( OS_on==false ) OS_on=true;//End OS level mouse click
+  if ( splashScreenStart == true && mouseX > quitX && mouseX < quitX+quitWidth && mouseY > quitY && mouseY < quitY+quitHeight ) exit();
+  if ( splashScreenStart == true && mouseX > startX2 && mouseX < startX2+startWidth2 && mouseY > startY2 && mouseY < startY2+startHeight2 ) startNow=true;
+  if ( startNow == true && mouseX > restartX && mouseX < restartX+restartWidth && mouseY > restartY && mouseY < restartY+restartHeight ) reset=true;
+  if ( startNow == true && mouseX > yesX1 && mouseX < yesX1+yesWidth1 && mouseY > yesY1 && mouseY < yesY1+yesHeight1 ) goodForYou=true;
+  if ( pic2C2 == true && mouseX > yesX2 && mouseX < yesX2+yesWidth2 && mouseY > yesY2 && mouseY < yesY2+yesHeight2 ) goodForYou=true;
+  if ( pic3C3 == true && mouseX > yesX3 && mouseX < yesX3+yesWidth3 && mouseY > yesY3 && mouseY < yesY3+yesHeight3 ) goodForYou=true;
+  if ( pic4C4 == true && mouseX > yesX4 && mouseX < yesX4+yesWidth4 && mouseY > yesY4 && mouseY < yesY4+yesHeight4 ) goodForYou=true;
+  if ( pic5C5 == true && mouseX > yesX5 && mouseX < yesX5+yesWidth5 && mouseY > yesY5 && mouseY < yesY5+yesHeight5 ) goodForYou=true;
+  if ( pic6C6 == true && mouseX > yesX6 && mouseX < yesX6+yesWidth6 && mouseY > yesY6 && mouseY < yesY6+yesHeight6 ) goodForYou=true;
+  if ( pic7C7 == true && mouseX > yesX7 && mouseX < yesX7+yesWidth7 && mouseY > yesY7 && mouseY < yesY7+yesHeight7 ) goodForYou=true;
+  if ( pic1C1 == true && mouseX > noX1 && mouseX < noX1+noWidth1 && mouseY > noY1 && mouseY < noY1+noHeight1 ) pic2C2=true;
+  if ( pic3C3 == true && mouseX > noX2 && mouseX < noX2+noWidth2 && mouseY > noY2 && mouseY < noY2+noHeight2 ) pic3C3=true;
+  if ( pic3C3 == true && mouseX > noX3 && mouseX < noX3+noWidth3 && mouseY > noY3 && mouseY < noY3+noHeight3 ) pic4C4=true;
+  if ( pic4C4 == true && mouseX > noX4 && mouseX < noX4+noWidth4 && mouseY > noY4 && mouseY < noY4+noHeight4 ) pic5C5=true;
+  if ( pic5C5 == true && mouseX > noX5 && mouseX < noX5+noWidth5 && mouseY > noY5 && mouseY < noY5+noHeight5 ) pic6C6=true;
+  if ( pic6C6 == true && mouseX > noX6 && mouseX < noX6+noWidth6 && mouseY > noY6 && mouseY < noY6+noHeight6 ) pic7C7=true;
+  if ( pic7C7 == true && mouseX > noX6 && mouseX < noX6+noWidth6 && mouseY > noY6 && mouseY < noY6+noHeight6 ) extreC8=true;
+}//End mousePressed
+//
+//End main program
