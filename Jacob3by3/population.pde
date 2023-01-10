@@ -144,6 +144,11 @@ void population() {
   noY9 = appHeight * 2.35/3;
   noWidth9 = appWidth * 1/20;
   noHeight9 = appHeight * 2/20;
+  // win
+  winX=1/3;
+  winY=1/3;
+  winHeight=1/2;
+  winWidth=1/2;
   //
 }//End population
 //
