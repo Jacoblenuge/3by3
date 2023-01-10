@@ -14,7 +14,7 @@ float yesX4, yesY4, yesWidth4, yesHeight4, noX4, noY4, noWidth4, noHeight4;
 float yesX5, yesY5, yesWidth5, yesHeight5, noX5, noY5, noWidth5, noHeight5;
 float yesX6, yesY6, yesWidth6, yesHeight6, noX6, noY6, noWidth6, noHeight6;
 float yesX7, yesY7, yesWidth7, yesHeight7, noX7, noY7, noWidth7, noHeight7;
-Boolean pic1C1=true, pic2C2=false, pic3C3=false, pic4C4=false, pic5C5=false, pic6C6=false, pic7C7=false,extreC8=false;
+Boolean pic1C1=true, pic2C2=false, pic3C3=false, pic4C4=false, pic5C5=false, pic6C6=false, pic7C7=false,pic8C8=false;
 //
 void gridDraw2() {
   background(255);
