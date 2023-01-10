@@ -18,6 +18,7 @@ float yesX8, yesY8, yesWidth8, yesHeight8, noX8, noY8, noWidth8, noHeight8;
 float yesX9, yesY9, yesWidth9, yesHeight9, noX9, noY9, noWidth9, noHeight9;
 Boolean pic1C1=true, pic2C2=false, pic3C3=false, pic4C4=false, pic5C5=false, pic6C6=false, pic7C7=false,pic8C8=false,pic9C9=false;;
 //
+
 void gridDraw2() {
   background(255);
   strokeWeight(6);
@@ -97,10 +98,10 @@ void gridDraw2() {
     rect(noX8, noY8, noWidth8, noHeight8);
   }
    if (pic9C9==true) {
-    image(pic9, columX9,columY8, columWidth8, columHeight8);
+    image(pic9, columX9, columY9, columWidth9, columHeight9);
     fill(0, 255, 0);
     rect(yesX9, yesY9, yesWidth9, yesHeight9);
     fill(255, 0, 0);
-    //rect(noX9, noY9, noWidth9, noHeight9);
+    rect(noX9, noY9, noWidth9, noHeight9);
   }
 }//End gridDraw2

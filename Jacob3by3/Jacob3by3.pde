@@ -67,7 +67,11 @@ void keyPressed() {
       nightMode=true;
       backgroundImage();
     }
-  }
+    
+    }
+    
+  
+  
 }//End keyPressed
 //
 void mousePressed() {
@@ -85,6 +89,7 @@ void mousePressed() {
   if ( pic6C6 == true && mouseX > noX6 && mouseX < noX6+noWidth6 && mouseY > noY6 && mouseY < noY6+noHeight6 ) pic7C7=true;
   if ( pic7C7 == true && mouseX > noX7 && mouseX < noX7+noWidth7 && mouseY > noY7 && mouseY < noY7+noHeight7 ) pic8C8=true;
   if ( pic8C8 == true && mouseX > noX8 && mouseX < noX8+noWidth8 && mouseY > noY8 && mouseY < noY8+noHeight8 ) pic9C9=true;
+  if ( pic9C9 == true && mouseX > noX9 && mouseX < noX9+noWidth9 && mouseY > noY9 && mouseY < noY9+noHeight9 )  exit();
   
 }//End mousePressed
 //
