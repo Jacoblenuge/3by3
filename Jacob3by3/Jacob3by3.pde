@@ -1,7 +1,7 @@
 //Global Variables
 int appWidth, appHeight, smallerDimension, largerDimension;
 Boolean OS_on=false, splashScreenStart=false, nightMode=false, startNow=false, reset=false, Correct=false;
-color purple=#FF00FF, resetDefaultInk=#000000, white=#FFFFFF;
+color purple=#FF00FF, resetDefaultInk=#000000, white=#FFFFFF,Black=#050000;
 float lineX1, lineY1, lineWidth1, lineHeight1;
 float lineX2, lineY2, lineWidth2, lineHeight2;
 float lineX3, lineY3, lineWidth3, lineHeight3;
@@ -24,6 +24,7 @@ void setup() {
   population();
   textSetup();
   imagePopulation();
+  println("when start/quit button text is in corner restart bug");
 }//End setup
 //
 void draw() {
@@ -89,7 +90,9 @@ void mousePressed() {
   if ( pic6C6 == true && mouseX > noX6 && mouseX < noX6+noWidth6 && mouseY > noY6 && mouseY < noY6+noHeight6 ) pic7C7=true;
   if ( pic7C7 == true && mouseX > noX7 && mouseX < noX7+noWidth7 && mouseY > noY7 && mouseY < noY7+noHeight7 ) pic8C8=true;
   if ( pic8C8 == true && mouseX > noX8 && mouseX < noX8+noWidth8 && mouseY > noY8 && mouseY < noY8+noHeight8 ) pic9C9=true;
+  //exits
   if ( pic9C9 == true && mouseX > noX9 && mouseX < noX9+noWidth9 && mouseY > noY9 && mouseY < noY9+noHeight9 )  exit();
+    if ( Correct == true && mouseX > winX && mouseX < winX+winWidth && mouseY > winY && mouseY < winY+winHeight )  exit();
   //green buttons
   if ( pic7C7 == true && mouseX > yesX7 && mouseX < yesX7+yesWidth7 && mouseY > yesY7 && mouseY < yesY7+yesHeight7 ) Correct=true;
   

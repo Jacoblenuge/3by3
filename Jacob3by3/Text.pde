@@ -12,7 +12,6 @@ void textSetup() {
 }//End textSetup
 //
 void spaceBarText() {
-  //rect(startX, startY, startWidth, startHeight);
   fill(purple); //Ink, hexidecimal copied from Color Selector
   textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
@@ -22,5 +21,15 @@ void spaceBarText() {
   text(spaceBar, startX, startY, startWidth, startHeight);
   fill(resetDefaultInk);
 }//End spaceBarText
+void winText() {
+  fill(Black); //Ink, hexidecimal copied from Color Selector
+  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  int size = 38;
+  textFont(Harrington, size); 
+  String win = "Correct You Win!!! Click Here To Exit";
+  text(win, winX,winY,winWidth,winHeight);
+  fill(resetDefaultInk);
+}//End winText
 //
 //End text subprogram
