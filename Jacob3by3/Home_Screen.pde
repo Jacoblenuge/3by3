@@ -19,7 +19,7 @@ void homeScreen() {
 void backgroundWhiteScreen() {
   fill(white);
   noStroke();
-  rect(backgroundX, backgroundY, backgroundWidth, backgroundHeight);
+  rect(backgroundX, backgroundY, backgroundWidth, backgroundHeight );
   strokeWeight(1); //reset: 1 pixel
   fill(white); //reset: white
 }//End backgroundWhiteScreen

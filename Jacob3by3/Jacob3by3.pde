@@ -1,6 +1,6 @@
 //Global Variables
 int appWidth, appHeight, smallerDimension, largerDimension;
-Boolean OS_on=false, splashScreenStart=false, nightMode=false, startNow=false, reset=false, Correct=false;
+Boolean OS_on=false, splashScreenStart=false, nightMode=false, startNow=false, reset=false, Correct=false,Wrong=false ;
 color purple=#FF00FF, resetDefaultInk=#000000, white=#FFFFFF,Black=#050000;
 float lineX1, lineY1, lineWidth1, lineHeight1;
 float lineX2, lineY2, lineWidth2, lineHeight2;
@@ -49,8 +49,15 @@ void draw() {
     pic6C6=false;
     pic7C7=false;
   }
+ 
+
 if (Correct==true){Win();
 }
+if (Correct==true){ winimage();
+}
+if(Wrong==true){Incorect();
+}
+
 }//End draw
 //
 void keyPressed() {
@@ -93,9 +100,18 @@ void mousePressed() {
   //exits
   if ( pic9C9 == true && mouseX > noX9 && mouseX < noX9+noWidth9 && mouseY > noY9 && mouseY < noY9+noHeight9 )  exit();
     if ( Correct == true && mouseX > winX && mouseX < winX+winWidth && mouseY > winY && mouseY < winY+winHeight )  exit();
-  //green buttons
-  if ( pic7C7 == true && mouseX > yesX7 && mouseX < yesX7+yesWidth7 && mouseY > yesY7 && mouseY < yesY7+yesHeight7 ) Correct=true;
-  
+  //Wrong Buttons buttons
+  if ( pic1C1 == true && mouseX > yesX1 && mouseX < yesX1+yesWidth1 && mouseY > yesY1 && mouseY < yesY1+yesHeight1 ) Wrong=true;
+  if ( pic2C2 == true && mouseX > yesX2 && mouseX < yesX2+yesWidth2 && mouseY > yesY2 && mouseY < yesY2+yesHeight2 ) Wrong=true;
+  if ( pic3C3 == true && mouseX > yesX3 && mouseX < yesX3+yesWidth3 && mouseY > yesY3 && mouseY < yesY3+yesHeight3 ) Wrong=true;
+  if ( pic4C4 == true && mouseX > yesX4 && mouseX < yesX4+yesWidth4 && mouseY > yesY4 && mouseY < yesY4+yesHeight4 ) Wrong=true;
+  if ( pic5C5 == true && mouseX > yesX5 && mouseX < yesX5+yesWidth5 && mouseY > yesY5 && mouseY < yesY5+yesHeight5 ) Wrong=true;
+  if ( pic6C6 == true && mouseX > yesX6 && mouseX < yesX6+yesWidth6 && mouseY > yesY6 && mouseY < yesY6+yesHeight6 ) Wrong=true;
+  if ( pic8C8 == true && mouseX > yesX8 && mouseX < yesX1+yesWidth8 && mouseY > yesY8 && mouseY < yesY8+yesHeight8 ) Wrong=true;
+  //right Button
+    if ( pic7C7 == true && mouseX > yesX7 && mouseX < yesX7+yesWidth7 && mouseY > yesY7 && mouseY < yesY7+yesHeight7 ) Correct=true;
+    //lose button
+      if (Wrong== true && mouseX > loseX && mouseX < loseX+loseWidth && mouseY > loseY && mouseY < loseY+loseHeight )exit();
 }//End mousePressed
 //
 //End main program

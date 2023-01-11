@@ -12,6 +12,7 @@ void imagePopulation() {
  pic7 = loadImage ("../Images/images40k.jpg"); 
  pic8 =loadImage ("../Images/images8.jpg"); 
   pic9 =loadImage ("../Images/images9.jpg"); 
+  backgroundImage2 = loadImage ("../Images/imageswin.jpg"); 
 }//End imagePopulation
 //
 //End imagePopulation subprogram

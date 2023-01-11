@@ -1,9 +1,9 @@
 float winX,winY,winHeight,winWidth;
 //
 void Win() {
-  background(70, 70, 70); 
+  background(100, 40, 170); 
   rect(winX,winY,winWidth,winHeight);
- fill(90,90,90);
+ fill(10,200,10);
  winText();
  // fill(255, 0, 0);
 }// endcorrect

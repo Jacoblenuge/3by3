@@ -1,4 +1,4 @@
-float startX, startY, startWidth, startHeight;
+float startX, startY, startWidth, startHeight,infoY;
 //
 void splashScreen() {
   /* Note: any visually-based code running is setup() controlled by mouse click
@@ -13,6 +13,8 @@ void splashScreen() {
   //background(255);//testing only, not nightmode friendly, ful blue
   backgroundWhiteScreen();
   spaceBarText();
+  infoText();
+  
 }//End splashScreen
 //
 //End splashScreen subprogram

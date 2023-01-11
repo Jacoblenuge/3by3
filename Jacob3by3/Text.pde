@@ -32,4 +32,29 @@ void winText() {
   fill(resetDefaultInk);
 }//End winText
 //
+//
+void loseText() {
+  fill(Black); //Ink, hexidecimal copied from Color Selector
+  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  int size = 38;
+  textFont(Harrington, size); 
+  String lose = "Wrong You Lose.Click Here To Exit";
+  text(lose, loseX,loseY,loseWidth,loseHeight);
+  fill(resetDefaultInk);
+}//EndloseText
+//
+//
+//
+void infoText() {
+  fill(Black); //Ink, hexidecimal copied from Color Selector
+  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  int size = 38;
+  textFont(Harrington, size); 
+  String info = "Find the pciture from Warhammer 40k to win";
+  text(info,startX, infoY, startWidth, startHeight );
+  fill(resetDefaultInk);
+}//EndloseText
+//
 //End text subprogram
