@@ -1,4 +1,4 @@
-float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
+float backgroundX, backgroundY, backgroundWidth, backgroundHeight,textX,textY,textWidth,textHeight;
 int tintDayMode=255, tintDayModeOpacity=50;
 int tintRed= 65, tintGreen=64, tintBlue=30, tintNightModeOpacity=85;
 //
@@ -13,7 +13,10 @@ int tintRed= 65, tintGreen=64, tintBlue=30, tintNightModeOpacity=85;
   */
 void homeScreen() {
   //println("Arrived at Home Screen"); //testing for splash screen start button
-  //
+   
+   //rect(textX,textY,textWidth,textHeight);
+  // fill(purple);
+  // infoText();
 }//End homeScreen
 //
 void backgroundWhiteScreen() {
@@ -29,6 +32,11 @@ void backgroundImage() {
   if (nightMode==false) tint(tintDayMode, tintDayModeOpacity); //day mode, see ternary operator
   if (nightMode==true) tint(tintRed= 64, tintGreen=64, tintBlue=40, tintNightModeOpacity); //night mode, see ternary operator
   image(backgroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight);
+  infoText();
+  strokeWeight(7);
+  fill(white);
+  rect(textX,textY,textWidth,textHeight);
+  infoText();
 }//End backgroundImage
 //
 //End home Screen subprogram

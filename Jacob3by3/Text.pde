@@ -50,10 +50,10 @@ void infoText() {
   fill(Black); //Ink, hexidecimal copied from Color Selector
   textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  int size = 38;
+  int size = 20;
   textFont(Harrington, size); 
   String info = "Find the pciture from Warhammer 40k to win";
-  text(info,startX, infoY, startWidth, startHeight );
+  text(info, textX,textY,textWidth,textHeight);
   fill(resetDefaultInk);
 }//EndloseText
 //

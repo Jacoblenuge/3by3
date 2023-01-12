@@ -155,7 +155,14 @@ void population() {
   loseWidth=appWidth*1/4;;
   loseHeight=appWidth*1/4;
   //
-  infoY= startY*4/3;
+  infoY= startY*5/3;
+  infoX=startWidth*1/2;
+  //
+  //
+  textX=appWidth*3/7;
+  textY=appHeight*2/3;
+  textWidth=appWidth*2/9;
+  textHeight=appHeight*1/10;;
   //
 }//End population
 //

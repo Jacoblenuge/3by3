@@ -76,9 +76,9 @@ void keyPressed() {
       nightMode=true;
       backgroundImage();
     }
-    
+   
     }
-    
+  }
   
   
 }//End keyPressed
@@ -107,7 +107,8 @@ void mousePressed() {
   if ( pic4C4 == true && mouseX > yesX4 && mouseX < yesX4+yesWidth4 && mouseY > yesY4 && mouseY < yesY4+yesHeight4 ) Wrong=true;
   if ( pic5C5 == true && mouseX > yesX5 && mouseX < yesX5+yesWidth5 && mouseY > yesY5 && mouseY < yesY5+yesHeight5 ) Wrong=true;
   if ( pic6C6 == true && mouseX > yesX6 && mouseX < yesX6+yesWidth6 && mouseY > yesY6 && mouseY < yesY6+yesHeight6 ) Wrong=true;
-  if ( pic8C8 == true && mouseX > yesX8 && mouseX < yesX1+yesWidth8 && mouseY > yesY8 && mouseY < yesY8+yesHeight8 ) Wrong=true;
+  if ( pic8C8 == true && mouseX > yesX8 && mouseX < yesX8+yesWidth8 && mouseY > yesY8 && mouseY < yesY8+yesHeight8 ) Wrong=true;
+  if ( pic9C9 == true && mouseX > yesX9 && mouseX < yesX9+yesWidth9 && mouseY > yesY9 && mouseY < yesY9+yesHeight9 ) Wrong=true;
   //right Button
     if ( pic7C7 == true && mouseX > yesX7 && mouseX < yesX7+yesWidth7 && mouseY > yesY7 && mouseY < yesY7+yesHeight7 ) Correct=true;
     //lose button

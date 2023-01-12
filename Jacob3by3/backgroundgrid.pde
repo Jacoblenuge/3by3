@@ -24,4 +24,8 @@ void gridDraw() {
   } //End Hover Over
   fill(0);
   text("QUIT", quitX, quitY, quitWidth, quitHeight);
+  fill(resetDefaultInk);
+//  rect(textX,textY,textWidth,textHeight);  
+  // fill(purple);
+   
 }//End gridDraw

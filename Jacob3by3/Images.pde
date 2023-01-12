@@ -13,6 +13,8 @@ void imagePopulation() {
  pic8 =loadImage ("../Images/images8.jpg"); 
   pic9 =loadImage ("../Images/images9.jpg"); 
   backgroundImage2 = loadImage ("../Images/imageswin.jpg"); 
+  if (nightMode==false) tint(tintDayMode, tintDayModeOpacity); //day mode, see ternary operator
+  if (nightMode==true) tint(tintRed= 64, tintGreen=64, tintBlue=40, tintNightModeOpacity); 
 }//End imagePopulation
 //
 //End imagePopulation subprogram
