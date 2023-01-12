@@ -1,3 +1,5 @@
+
+float largerDimension,smallerDimension;
 void display() {
   if (appWidth>=appHeight) {
     largerDimension = appWidth;
