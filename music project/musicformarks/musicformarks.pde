@@ -21,7 +21,7 @@ float stopAlarmX, stopAlarmY, stopAlarmWidth, stopAlarmHeight;
 float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 PImage fastForward, backwards, loop, infiniteLoop, mute, play, stop, background;
 boolean nightMode=false;
-color orange = #FF5F1F, nightModeOrange = #FF5F00;
+color green = #64F545, nightModegreen = #64F500;
 Minim minim; //creates object to access all functions
 AudioPlayer song1; //creates "play list" variable holding extenstions WAV, AIFF, AU, SND, and MP3
 AudioPlayer song2;
@@ -85,9 +85,9 @@ void setup() {
 void draw() {
   //background(orange);
   if (nightMode==true) {
-    background(nightModeOrange);
+    background(nightModegreen);
   } else {
-    background(orange);
+    background(green);
   }
   fill(0);
   textSize(60);
