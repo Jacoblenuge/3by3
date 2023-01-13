@@ -164,43 +164,7 @@ void population() {
   textWidth=appWidth*2/9;
   textHeight=appHeight*1/10;
   //music
-  text2X = appWidth * 7/20;
-  text2Y = appHeight * 2/20;
-  forwardX = appWidth * 8.5/20;
-  forwardY = appHeight * 4/20;
-  forwardWidth = appWidth * 3/20;
-  forwardHeight = appHeight * 2/20;
-  fastForward = loadImage ("../Images/fastforward.jpg");
-  backwardsX = appWidth * 8.5/20;
-  backwardsY = appHeight * 7/20;
-  backwardsWidth = appWidth * 3/20;
-  backwardsHeight = appHeight * 2/20;
-  backwards = loadImage ("../Images/rewind.jpg");
-  loopX = appWidth * 8.5/20;
-  loopY = appHeight * 10/20;
-  loopWidth = appWidth * 3/20;
-  loopHeight = appHeight * 2/20;
-  loop = loadImage ("../Images/loop.jpg");
-  infiniteLoopX = appWidth * 8.5/20;
-  infiniteLoopY = appHeight * 13/20;
-  infiniteLoopWidth = appWidth * 3/20;
-  infiniteLoopHeight = appHeight * 2/20;
-  infiniteLoop = loadImage ("../Images/infinitloop.jpg");
-  muteX = appWidth * 8.5/20;
-  muteY = appHeight * 16/20;
-  muteWidth = appWidth * 3/20;
-  muteHeight = appHeight * 2/20;
-  mute = loadImage ("../Images/mute.jpg");
-  playX = appWidth * 4.5/20;
-  playY = appHeight * 4/20;
-  playWidth = appWidth * 3/20;
-  playHeight = appHeight * 2/20;
-  play = loadImage ("../Images/play.jpg");
-  stopX = appWidth * 12.5/20;
-  stopY = appHeight * 4/20;
-  stopWidth = appWidth * 3/20;
-  stopHeight = appHeight * 2/20;
-  stop = loadImage ("../Images/stop.jpg");
+ 
   //
 }//End population
 //

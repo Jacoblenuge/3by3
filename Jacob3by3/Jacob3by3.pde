@@ -1,15 +1,9 @@
 
 
-import ddf.minim.*;
-import ddf.minim.analysis.*;
-import ddf.minim.effects.*;
-import ddf.minim.signals.*;
-import ddf.minim.spi.*;
-import ddf.minim.ugens.*;
 
 //Global Variables
 //int appWidth, appHeight, smallerDimension, largerDimension;
-Boolean OS_on=false, splashScreenStart=false, nightMode=false, startNow=false, reset=false, Correct=false,Wrong=false,Sound=false;
+Boolean OS_on=false, splashScreenStart=false, nightMode=false, startNow=false, reset=false, Correct=false,Wrong=false;
 color purple=#FF00FF, resetDefaultInk=#000000, white=#FFFFFF,Black=#050000;
 float lineX1, lineY1, lineWidth1, lineHeight1;
 float lineX2, lineY2, lineWidth2, lineHeight2;
@@ -25,9 +19,7 @@ int appWidth,appHeight;
 
 void setup() {
   size(1200, 900);
-  minim = new Minim(this); //load from data directory, loadFile should also load from project folder, like loadImage
- song1 = minim.loadFile("../musicused/MusicDownload/Die Flippers - Wir sagen Danke schön [40 Jahre] (HBz & Raphael Maier Remix).mp3"); //able to pass absolute path, file name & extension, and URL
- song2  = minim.loadFile("../musicused/MusicDownload/F-777 - Deadlocked.mp3");
+
   //
   appWidth = width;
   appHeight = height;
@@ -70,10 +62,10 @@ if (Correct==true){ winimage();
 }
 if(Wrong==true){Incorect();
 }
-if (Sound==true){playmusic();
+
 }
 
-}//End draw
+{}//End draw
 //
 void keyPressed() {
   if ( OS_on==true && key==' ' ) {
@@ -94,25 +86,20 @@ void keyPressed() {
    
     }
  { }
-  if (key=='d' || key=='D') { 
-    if (Sound==true) { 
-      Sound=false;
-    } else { 
-      Sound=true;}
-     {
+
 {
 }
      }
-  }
-}
+  
+
 {}//End keyPressed
 //
 void mousePressed() {
   //OS level mouse click
   if ( OS_on==false ) OS_on=true;//End OS level mouse click
-  if(Sound==true){
+ 
   if ( splashScreenStart == true && mouseX > quitX && mouseX < quitX+quitWidth && mouseY > quitY && mouseY < quitY+quitHeight ) exit();
-  if ( splashScreenStart == true && mouseX > startX2 && mouseX < startX2+startWidth2 && mouseY > startY2 && mouseY < startY2+startHeight2 ) startNow=true;}
+  if ( splashScreenStart == true && mouseX > startX2 && mouseX < startX2+startWidth2 && mouseY > startY2 && mouseY < startY2+startHeight2 ) startNow=true;
   if ( startNow == true && mouseX > restartX && mouseX < restartX+restartWidth && mouseY > restartY && mouseY < restartY+restartHeight ) reset=true;
   if ( pic1C1 == true && mouseX > noX1 && mouseX < noX1+noWidth1 && mouseY > noY1 && mouseY < noY1+noHeight1 ) pic2C2=true;
   if ( pic2C2 == true && mouseX > noX2 && mouseX < noX2+noWidth2 && mouseY > noY2 && mouseY < noY2+noHeight2 ) pic3C3=true;
@@ -140,35 +127,7 @@ void mousePressed() {
       if (Wrong== true && mouseX > loseX && mouseX < loseX+loseWidth && mouseY > loseY && mouseY < loseY+loseHeight )exit();
       //music
 
-       int loopNum = 2; //local variable plays once loops twice
-  if ( mouseX > forwardX && mouseX < forwardX+forwardWidth && mouseY > forwardY && mouseY < forwardY+forwardHeight ) song1.skip(30000); //skip forward 1 second (1000 milliseconds)
-  if ( mouseX > backwardsX && mouseX < backwardsX+backwardsWidth && mouseY > backwardsY && mouseY < backwardsY+backwardsHeight ) song1.skip(-1000); //skip backwards 1 second, notice negative, (1000 milliseconds)
-  if ( mouseX > loopX && mouseX < loopX+loopWidth && mouseY > loopY && mouseY < loopY+loopHeight ) song1.loop(loopNum);
-  if ( mouseX > infiniteLoopX && mouseX < infiniteLoopX+infiniteLoopWidth && mouseY > infiniteLoopY && mouseY < infiniteLoopY+infiniteLoopHeight ) song1.loop(-1); // parameter is for infinite loops
-  if ( mouseX > muteX && mouseX < muteX+muteWidth && mouseY > muteY && mouseY < muteY+muteHeight ) {
-    if ( song1.isMuted() ) {
-      song1.unmute();
-    } else {
-      song1.mute();
-    }
   }
-  if ( mouseX > playX && mouseX < playX+playWidth && mouseY > playY && mouseY < playY+playHeight ) {
-    if ( song1.isPlaying() ) {
-      song1.pause();
-    } else if ( song1.position() >= song1.length()-song1.length()*1/5 ) {
-    song2.play();
-    } else {
-      song1.play();
-    }
-  }
-  if ( mouseX > stopX && mouseX < stopX+stopWidth && mouseY > stopY && mouseY < stopY+stopHeight ) {
-    if ( song1.isPlaying() ) {
-      song1.pause();
-      song1.rewind(); // Cue SONG to play from beginning
-    } else {
-      song1.rewind(); //Not playing means song is paused or song posistion is at the end
-    }
-  }
-}//End mousePressed
+{}//End mousePressed
 //
 //End main program
