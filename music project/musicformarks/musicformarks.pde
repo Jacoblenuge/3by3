@@ -20,18 +20,21 @@ float playAlarmX, playAlarmY, playAlarmWidth, playAlarmHeight;
 float stopAlarmX, stopAlarmY, stopAlarmWidth, stopAlarmHeight;
 float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 PImage fastForward, backwards, loop, infiniteLoop, mute, play, stop, background;
-boolean nightMode=false;
+boolean nightMode=false,Sound1=true,Sound2=false;
 color green = #64F545, nightModegreen = #64F500;
 Minim minim; //creates object to access all functions
 AudioPlayer song1; //creates "play list" variable holding extenstions WAV, AIFF, AU, SND, and MP3
 AudioPlayer song2;
+AudioPlayer song3;
 //
 void setup() {
+  println("seconde song kind wacked to play wait for a bit after song one is done and press play");
+  if(Sound2==true)Sound1=false;
   size(1200, 900);
   appWidth = width;
   appHeight = height;
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder, like loadImage
-  //song3 = minim.loadFile("../musicused/MusicDownload/Die Flippers - Wir sagen Danke schön [40 Jahre] (HBz & Raphael Maier Remix).mp3"); //able to pass absolute path, file name & extension, and URL
+  song3 = minim.loadFile("../musicused/MusicDownload/Die Flippers - Wir sagen Danke schön [40 Jahre] (HBz & Raphael Maier Remix).mp3"); //able to pass absolute path, file name & extension, and URL
   song1 = minim.loadFile("../musicused/MusicDownload/F-777 - Deadlocked.mp3");
   song2 = minim.loadFile("../musicused/MusicDownload/Imperial Alert⧸Death Star Alarm(Clean).mp3");
   //population
@@ -130,8 +133,9 @@ void keyPressed() {
 //
 void mousePressed() {
   int loopNum = 2; //local variable plays once loops twice
-  if ( mouseX > forwardX && mouseX < forwardX+forwardWidth && mouseY > forwardY && mouseY < forwardY+forwardHeight ) song1.skip(1000); //skip forward 1 second (1000 milliseconds)
-  if ( mouseX > backwardsX && mouseX < backwardsX+backwardsWidth && mouseY > backwardsY && mouseY < backwardsY+backwardsHeight ) song1.skip(-1000); //skip backwards 1 second, notice negative, (1000 milliseconds)
+  if(Sound1==true){if ( mouseX > forwardX && mouseX < forwardX+forwardWidth && mouseY > forwardY && mouseY < forwardY+forwardHeight ) {song1.skip(10000);} else if ( song1.position() >= song1.length()-song1.length()*8/9 ) {
+      song3.play();} //
+  if ( mouseX > backwardsX && mouseX < backwardsX+backwardsWidth && mouseY > backwardsY && mouseY < backwardsY+backwardsHeight ) song1.skip(-10000); //skip backwards 1 second, notice negative, (1000 milliseconds)
   if ( mouseX > loopX && mouseX < loopX+loopWidth && mouseY > loopY && mouseY < loopY+loopHeight ) song1.loop(loopNum);
   if ( mouseX > infiniteLoopX && mouseX < infiniteLoopX+infiniteLoopWidth && mouseY > infiniteLoopY && mouseY < infiniteLoopY+infiniteLoopHeight ) song1.loop(-1); // parameter is for infinite loops
   if ( mouseX > muteX && mouseX < muteX+muteWidth && mouseY > muteY && mouseY < muteY+muteHeight ) {
@@ -159,6 +163,39 @@ void mousePressed() {
       song1.rewind(); //Not playing means song is paused or song posistion is at the end
     }
   }
+if ( song1.position() >= song1.length()-song1.length()*8/9 )  Sound2=true;
+
+    if(Sound2==true){ if ( mouseX > forwardX && mouseX < forwardX+forwardWidth && mouseY > forwardY && mouseY < forwardY+forwardHeight ) song3.skip(10000); //skip forward 1 second (1000 milliseconds)
+  if ( mouseX > backwardsX && mouseX < backwardsX+backwardsWidth && mouseY > backwardsY && mouseY < backwardsY+backwardsHeight ) song3.skip(-10000); //skip backwards 1 second, notice negative, (1000 milliseconds)
+  if ( mouseX > loopX && mouseX < loopX+loopWidth && mouseY > loopY && mouseY < loopY+loopHeight ) song3.loop(loopNum);
+  if ( mouseX > infiniteLoopX && mouseX < infiniteLoopX+infiniteLoopWidth && mouseY > infiniteLoopY && mouseY < infiniteLoopY+infiniteLoopHeight ) song3.loop(-1); // parameter is for infinite loops
+  if ( mouseX > muteX && mouseX < muteX+muteWidth && mouseY > muteY && mouseY < muteY+muteHeight ) {
+    if ( song3.isMuted() ) {
+      song3.unmute();
+    } else {
+      song3.mute();
+    }
+  }
+  if ( mouseX > playX && mouseX < playX+playWidth && mouseY > playY && mouseY < playY+playHeight ) {
+    if ( song3.isPlaying() ) {
+      song3.pause();
+    } else if ( song3.position() >= song3.length()-song3.length()*6/7 ) {
+      song3.rewind();
+      song3.play();
+    } else {
+      song3.play();
+    }
+  }
+  }
+  if ( mouseX > stopX && mouseX < stopX+stopWidth && mouseY > stopY && mouseY < stopY+stopHeight ) {
+    if ( song3.isPlaying() ) {
+      song3.pause();
+      song3.rewind(); // Cue SONG to play from beginning
+    } else {
+      song3.rewind(); //Not playing means song is paused or song posistion is at the end
+    }}}
+    
+    //alarm
   if ( mouseX > playAlarmX && mouseX < playAlarmX+playAlarmWidth && mouseY > playAlarmY && mouseY < playAlarmY+playAlarmHeight ) {
     if ( song2.isPlaying() ) {
       song2.pause();
@@ -176,7 +213,41 @@ void mousePressed() {
     } else {
       song2.rewind(); //Not playing means song is paused or song posistion is at the end
     }
+    if ( song1.position() >= song1.length()-song1.length()*4/5 ) {
+      song3.play();}
+  if ( song3.isPlaying() ) {  if ( mouseX > forwardX && mouseX < forwardX+forwardWidth && mouseY > forwardY && mouseY < forwardY+forwardHeight ) song3.skip(1000); //skip forward 1 second (1000 milliseconds)
+  if ( mouseX > backwardsX && mouseX < backwardsX+backwardsWidth && mouseY > backwardsY && mouseY < backwardsY+backwardsHeight ) song3.skip(-1000); //skip backwards 1 second, notice negative, (1000 milliseconds)
+  if ( mouseX > loopX && mouseX < loopX+loopWidth && mouseY > loopY && mouseY < loopY+loopHeight ) song3.loop(loopNum);
+  if ( mouseX > infiniteLoopX && mouseX < infiniteLoopX+infiniteLoopWidth && mouseY > infiniteLoopY && mouseY < infiniteLoopY+infiniteLoopHeight ) song3.loop(-1); // parameter is for infinite loops
+  if ( mouseX > muteX && mouseX < muteX+muteWidth && mouseY > muteY && mouseY < muteY+muteHeight ) {
+    if ( song3.isMuted() ) {
+      song3.unmute();
+    } else {
+      song3.mute();
+    }
   }
+  if ( mouseX > playX && mouseX < playX+playWidth && mouseY > playY && mouseY < playY+playHeight ) {
+    if ( song3.isPlaying() ) {
+      song3.pause();
+    } else if ( song3.position() >= song3.length()-song3.length()*6/7 ) {
+      song3.rewind();
+      song3.play();
+    } else {
+      song3.play();
+    }
+  }
+  }
+  if ( mouseX > stopX && mouseX < stopX+stopWidth && mouseY > stopY && mouseY < stopY+stopHeight ) {
+    if ( song3.isPlaying() ) {
+      song3.pause();
+      song3.rewind(); // Cue SONG to play from beginning
+    } else {
+      song3.rewind(); //Not playing means song is paused or song posistion is at the end
+    }
+  }
+  }
+  }
+  {
 }//End mousePressed
 //
 //End main program
